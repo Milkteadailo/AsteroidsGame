@@ -2,7 +2,7 @@ SpaceShip flybaby;
 Stars [] airport;
 public void setup() 
 {
-  size(800,800);
+  size(1000,1000);
   flybaby = new SpaceShip();
   airport = new Stars[50];
 }
@@ -15,6 +15,14 @@ public void draw()
   airport[i]= new Stars();
   airport[i].show();
 }
+  fill(255);
+  textSize(20);
+  text("My speed: "+ flybaby.getDirectionX(), 20,50);
+  text("My point direction : " + flybaby.getPointDirection(),20,70);
+  text("My x: " + flybaby.getX(), 20,90);
+  text("My y: " + flybaby.getY(), 20,110);
+  text("Welcome To Asteroids",20,30);
+
 }
 
 public void keyPressed()
@@ -22,11 +30,11 @@ public void keyPressed()
  
   if (key == 'w')
   {
-    flybaby.accelerate(.5);
+    flybaby.accelerate(.05);
   }
   if (key == 's')
   {
-    flybaby.accelerate(-.5);
+    flybaby.accelerate(-.05);
   }
   if (key == 'a')
   {
@@ -43,5 +51,34 @@ public void keyPressed()
     flybaby.setDirectionX(0);
     flybaby.setDirectionY(0);
     flybaby.setPointDirection((int)(Math.random()*360));
+  }
+  if (key == 'b')
+  {
+    flybaby.setDirectionX(0);
+    flybaby.setDirectionY(0);
+  }
+  if (key == '+')
+  {
+    flybaby.accelerate(50);
+  }
+  if (key == '-')
+  {
+    flybaby.accelerate(-50);
+  }
+  if (key == '8')
+  {
+    flybaby.setPointDirection(270);
+  }
+   if (key == '6')
+  {
+    flybaby.setPointDirection(0);
+  }
+   if (key == '4')
+  {
+    flybaby.setPointDirection(180);
+  }
+   if (key == '2')
+  {
+    flybaby.setPointDirection(90);
   }
 }
