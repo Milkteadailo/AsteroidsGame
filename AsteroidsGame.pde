@@ -2,7 +2,7 @@ SpaceShip flybaby;
 Stars [] airport;
 public void setup() 
 {
-  size(1000,1000);
+  size(1200,800);
   flybaby = new SpaceShip();
   airport = new Stars[50];
 }
@@ -46,11 +46,12 @@ public void keyPressed()
   }
   if (key == 'h')
   {
-    flybaby.setX((int)(Math.random()*800));
+    flybaby.setX((int)(Math.random()*1200));
     flybaby.setY((int)(Math.random()*800));
     flybaby.setDirectionX(0);
     flybaby.setDirectionY(0);
     flybaby.setPointDirection((int)(Math.random()*360));
+    background(255);
   }
   if (key == 'b')
   {
@@ -77,8 +78,16 @@ public void keyPressed()
   {
     flybaby.setPointDirection(180);
   }
-   if (key == '2')
+  if (key == '2')
   {
     flybaby.setPointDirection(90);
+  }
+  if (key =='r')
+  {
+    flybaby.setX(600);
+    flybaby.setY(400);
+    flybaby.setDirectionX(0);
+    flybaby.setDirectionY(0);
+    flybaby.setPointDirection(0);
   }
 }

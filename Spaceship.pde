@@ -22,7 +22,7 @@ class SpaceShip extends Floater
     yCorners[1] = 0;
     xCorners[2] = -8;
     yCorners[2] = 8;
-    myCenterX = 400;
+    myCenterX = 600;
     myCenterY = 400;
     myColor = color(192, 192, 192);
     myDirectionX = 0;
