@@ -17,10 +17,11 @@ public void draw()
 }
   fill(255);
   textSize(20);
-  text("My speed: "+ flybaby.getDirectionX(), 20,50);
-  text("My point direction : " + flybaby.getPointDirection(),20,70);
-  text("My x: " + flybaby.getX(), 20,90);
-  text("My y: " + flybaby.getY(), 20,110);
+  text("My Speed: "+ flybaby.getDirectionX(), 20,50);
+  text("My Altitude: "+ (-1*(flybaby.getDirectionY())), 20,70);
+  text("My Point Direction : " + flybaby.getPointDirection(),20,90);
+  text("My X: " + flybaby.getX(), 20,110);
+  text("My Y: " + flybaby.getY(), 20,130);
   text("Welcome To Asteroids",20,30);
 
 }
@@ -30,11 +31,11 @@ public void keyPressed()
  
   if (key == 'w')
   {
-    flybaby.accelerate(.05);
+    flybaby.accelerate(1);
   }
   if (key == 's')
   {
-    flybaby.accelerate(-.05);
+    flybaby.accelerate(1);
   }
   if (key == 'a')
   {
