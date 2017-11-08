@@ -1,20 +1,26 @@
 SpaceShip flybaby;
 Stars [] airport;
+Asteroids[] proverty;
 public void setup() 
 {
   size(1200,800);
   flybaby = new SpaceShip();
-  airport = new Stars[50];
+  proverty = new Asteroids[500];
+  for (int i = 0; i < 500; i++)
+  {
+    proverty[i]= new Asteroids();
+  }
+  airport = new Stars[500];
+  for (int i = 0; i < 500; i++)
+  {
+    airport[i]= new Stars();
+  }
 }
 public void draw() 
 {
   background(0);
   flybaby.show();
   flybaby.move();
-  for (int i = 0; i < 50; i++){
-  airport[i]= new Stars();
-  airport[i].show();
-}
   fill(255);
   textSize(20);
   text("My Speed: "+ flybaby.getDirectionX(), 20,50);
@@ -23,6 +29,22 @@ public void draw()
   text("My X: " + flybaby.getX(), 20,110);
   text("My Y: " + flybaby.getY(), 20,130);
   text("Welcome To Asteroids",20,30);
+  for (int i = 0; i < 500; i++)
+  {
+  airport[i].show();
+  }
+  for (int i = 0; i < 500; i++)
+  {
+  proverty[i].move();
+  proverty[i].show();
+  proverty[i].turn(50);
+  if (proverty[i].getDirectionX()==0 && proverty[i].getDirectionY()==0)
+   {
+
+    proverty[i].setDirectionX(Math.random());
+    proverty[i].setDirectionY(Math.random());
+  }
+  }
 
 }
 
@@ -31,11 +53,11 @@ public void keyPressed()
  
   if (key == 'w')
   {
-    flybaby.accelerate(1);
+    flybaby.accelerate(.1);
   }
   if (key == 's')
   {
-    flybaby.accelerate(1);
+    flybaby.accelerate(-.1);
   }
   if (key == 'a')
   {
@@ -61,11 +83,11 @@ public void keyPressed()
   }
   if (key == '+')
   {
-    flybaby.accelerate(50);
+    flybaby.accelerate(10);
   }
   if (key == '-')
   {
-    flybaby.accelerate(-50);
+    flybaby.accelerate(-10);
   }
   if (key == '8')
   {
