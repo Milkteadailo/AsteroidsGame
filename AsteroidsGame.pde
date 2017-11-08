@@ -1,14 +1,14 @@
 SpaceShip flybaby;
 Stars [] airport;
-Asteroids[] proverty;
+Asteroid[] proverty;
 public void setup() 
 {
   size(1200,800);
   flybaby = new SpaceShip();
-  proverty = new Asteroids[500];
+  proverty = new Asteroid[500];
   for (int i = 0; i < 500; i++)
   {
-    proverty[i]= new Asteroids();
+    proverty[i]= new Asteroid();
   }
   airport = new Stars[500];
   for (int i = 0; i < 500; i++)
